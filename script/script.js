@@ -44,12 +44,6 @@ $(document).ready( function(){
 	*/
 		$('#code_postal').keyup(function(event){
 
-
-			// console.log('Event : ');
-			// console.log(event);
-			// console.log('keycode : '+event.keyCode);
-			// console.log('clef par le tableau : '+event['keyCode']);
-
 			// empechement de la declaration de l'evenement 
 			event.preventDefault();
 			// annuler la touche [ENTER]
@@ -97,42 +91,17 @@ $(document).ready( function(){
 							type: "POST",
 							// Json minimal pour la recherche contient aussi les coordonées GPS
 							url: "json/laposte_hexasmal.json",
-							// Json complet 
-							// url: "json/code-postal-code-insee-2015.json",
 							dataType: "json",
 
 							success : function(data, status) {
 								
-								
-								var code_postal = parseInt( $('#code_postal').val() );
+							var code_postal = parseInt( $('#code_postal').val() );
 								//console.log("Code postale saisie : "+code_postal);
 								console.log('Variable data : ');
 								console.log(data);
 								
 								// boucle
 								$.each(data, function(i, donnees){
-
-									// controle 
-
-									// controle pour l'avancement de la barre d'etat
-										//console.log('Variable i : '+i);
-										//console.log('variable données : ');
-										//console.log(donnees);
-									// calcule du % pour affichage de la progression de recherche
-										// var progression = (i*100)/39710 ;
-									// mise en entier
-										// progression = Math.round(progression);
-										// var messageProgression = 'Recherche à ' + progression + '%.';
-
-										// console.log('progression : ' + messageProgression);
-
-									// affichage dans le DOM
-										// $('#messageAttente').html(messageProgression);
-										// var afficheProgression = progression + '%.';
-										// $('#code_postal').next('span').append(afficheProgression);
-										// controle du pourcentage de progression
-											//console.log('Pourcentage de progression : '+ progression +' %.');
-
 
 									//condition pour le rajout des options
 										if (donnees['fields']['code_postal'] == code_postal ){
@@ -154,13 +123,6 @@ $(document).ready( function(){
 																			+'" >'+donnees['fields']['nom_de_la_commune']+'</option>');
 												
 											}
-												
-											// Affichage sans la ligne 5 et du bouton submit de validation du choix
-												// $('#selecteVille').append('<option value="'+donnees['fields']['nom_de_la_commune']+'" >'+donnees['fields']['nom_de_la_commune']+'</option>');
-												
-												// $('#selecteVille').show();
-												// $('#submit').show();
-												// $('#code_postal').next('span').html('');
 										}
 										
 								// fin du each
@@ -216,31 +178,11 @@ $(document).ready( function(){
 				var longitude          = $("#selecteVille :selected").attr('longitude');
 				// récupération de la latitude
 				var latitude           = $('#selecteVille :selected').attr('latitude');
-				// récupération de la région
-				// var region             = $('#selecteVille :selected').attr('region');
-				//     region             = region.substring(0,1).toUpperCase()+region.substring(1).toLowerCase();
-				// récupération du départemet
-				// var departement        = $('#selecteVille :selected').attr('departement');
-				//     departement        = departement.substring(0,1).toUpperCase()+departement.substring(1).toLowerCase();
-				// récupération du statut de la ville
-				// var statut_ville       = $('#selecteVille :selected').attr('statut');
 				
-				// récupération de la population
-				// var population_ville   = $('#selecteVille :selected').attr('population');
-				
-				// récupération de la superficie
-				// var superficie_ville   = $('#selecteVille :selected').attr('superficie');
-
 			// affichage dans le dom
 				
 				var affichage_page = ('<section id="donneesGenerales" >'
 									+'<h2>'+ville_selectionnee+'</h2>'
-									
-									// +'<p> Région : '+region+'</p>'
-									// +'<p> Département : '+departement+'</p>'
-									// +'<p> Statut de la commune : '+statut_ville+'</p>'
-									// +'<p> Population : '+population_ville+' Habitants</p>'
-									// +'<p> Superficie : '+superficie_ville+' m² </p>'
 									+'<p> Longitude : '+Math.round(longitude*100)/100+'°.</p>'
 									+'<p> Latitude : '+Math.round(latitude*100)/100+'°.</p>');
 
@@ -251,25 +193,11 @@ $(document).ready( function(){
 				 */
 				
 				 	// creation de la variable pour l'url
-				 		
-				 		// par la ville
-				 		
-				 		
-				 		//  var url_json = 'http://www.prevision-meteo.ch/services/json/'+ville_selectionnee;
-				 		// var carct = / /gi;
-				 		// var nouvelle_url = url_json.replace(carct,'-');
-				 		// console.log(nouvelle_url);
-						
-					
 				 		// par gps
-				 			// var nouvelle_latitude = Math.round(latitude*100)/100;
-				 			// var nouvelle_longitude = Math.round(longitude*100)/100;
-							var nouvelle_latitude  = latitude;
+				 			var nouvelle_latitude  = latitude;
 							var nouvelle_longitude = longitude;
-							
 							var url_json           = 'http://www.prevision-meteo.ch/services/json/lat='+nouvelle_latitude+'lng='+nouvelle_longitude;
-				 			//console.log(url_json);
-
+				 			
 					$.ajax ({
 						method : 'POST',
 						url : url_json,
