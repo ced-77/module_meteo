@@ -1,0 +1,248 @@
+/*
+	Configuration générale
+*/
+	* {
+		margin : 0; /* remise des marges extérieurs à zéro */
+		padding: 0; /* remise des marges intérieurs à zéro */
+	}
+
+	html {
+		font-size: 62.5%; 	/* activation de 1rem = 10px */
+	}
+
+	body {
+		font-size: 1.5rem; 	/* grasse des caratère mis à 20px */
+		
+	}
+
+	#corpDePage {
+
+		margin       : 0.25rem;
+		max-width    : 31.4rem; /* determination du corp sur un smartphone soit 320px */
+		border       : .5rem outset blue; /* creation et définition d'une bordure pour le body (illegale...) */
+		border-radius: 1.5rem; /* mise en arondi des bords */
+	}
+
+	h1, h2, h3, h4 {
+		text-align: center; /* centrage des titres  */
+	}
+
+	h1 {
+		font-size: 2rem; /* titre générale H1 en 20px */
+	}
+
+	h2 {
+		font-size: 1.95rem; /* Titre H2 en 19 px */
+	}
+
+	h3 {
+		font-size: 1.75rem; /* Titre h3 en 17.5px */
+	}
+
+	header section h2 {
+		text-align: left; /* remise à gauche du titre pour la saisie du code postale */
+	}
+
+	li {
+		list-style-type: none; /* retrait de l'affichage des puces */
+		margin-left    : 1.5rem; /* creation d'une marge pour décoler du bord par rapport à température */
+	}
+
+	a {
+		text-decoration: none; 	/* retrait des ligne de soulignement des balises A */
+		color          : black; /* mise en noir du lien */
+	}
+
+	p {
+		margin: 0rem; /* Annulation de toutes les marges des paragrafe */
+	}
+
+	
+	footer {
+		font-size: 1.5rem; /* footer à 1px */
+		margin-top: 2rem; /* création d'une marge de haut pour l'éloigner du reste */
+	}
+
+
+
+
+	/* Fin de la configuration générale */
+
+/*
+	Configuration de la saisie du code postale 
+*/
+	#selecteVille, #submit {
+		display: none; /* Effacement du block selectVille */
+	}
+
+	#code_postal {
+		width: 4rem; /* largeur du champs de saisie du code postal */
+	}
+
+	#messageAttente {
+		font-size: 1.5rem; /* Taille de caractere du span pour le message d'attente */
+		color    : white;
+	}
+
+	header h2 {
+		margin-top: 1rem ; /* Eloignement du titre choix de la ville pour une meilleur visibilité */
+	}
+
+	header form {
+		margin-top: 0.5rem ; /* Eloignement de la saisie pour un meilleur visibilité */
+	}
+
+	form p:not(:first-child) {
+		display: inline-block; /* Mise en ligne des paragrafe pour avoir le champ select à coté du bouton de validation */
+	}
+
+	form select {
+		margin-top: 0.5rem;
+	}
+
+
+	/* fin de la configuration de la saisie du code */
+
+
+/*
+	Configuration du main
+*/
+	
+	#corpDePage {
+		background-color: #00bcd4;
+		padding-left    : 1rem; 	/* Mise d'une marge sur le body afin d'eloigner les bords */
+		padding-right   : 1rem; 	/* Mise en place d'une mare intérieur droite  */
+	}
+
+	#donneesGenerales h2 {
+		margin-top   : 1rem; /* eloignement par rapport à la saisie du choix */
+		margin-bottom: 1rem;
+	}
+
+	.imageMeteo {
+		text-align: center; /* Centrage de toutes les images de météo */
+	}
+
+	#actuelle {
+		margin-bottom: 1rem; /* eloignement avec les choix jour par jour  */
+	}
+
+	#actuelle h3 {
+		margin-top   : 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.titreJourChevron {
+		display   : block; 	/* mise de la div en block pour alligner titre et chevron */
+		text-align: center; /* centrage du titre et du chevron */
+	}
+
+	.titreJourChevron h3, .titreJourChevron h4 {
+		display      : inline-block; 	/* mise en ligne du titre afin d'afficher le chevron à coté */
+		margin-top   : 0rem; 			/* elimination de la marge d'origine du h3 */
+		margin-bottom: 0rem;
+	}
+
+	.ouverture_prediction, .ouverture_prediction_heure {
+		margin-left   : 1.5rem; 		/* création d'une marge pour eloigner le chevron du titre */
+		vertical-align: text-top; 		/* alignement du chevron vers le haut pour une meilleur lecture */
+		font-size     : 1.5rem; 		/* Mise du chevron en 1px */
+
+	}
+
+	a:hover, #submit:hover, .ouverture_prediction:hover, .ouverture_prediction_heure:hover {
+		cursor: pointer; /* mettre une main comme curseur */
+
+	}
+
+	.sectionPredictionJour {
+		display: none; /* fermeture des sections des preductions journalières */
+	}
+
+	.sectionPredictionJour div {
+		display: block;		/* Mise en bloque pour une alignement entre les températures et l'icone */
+		text-align: center; /* centrage du block */
+	}
+
+	.sectionPredictionJour div p {
+		display       : inline-block; 	/* Mise en ligne pour que les températures et l'icone soit aligné sur la ^m ligne */
+		vertical-align: middle; 		/* essaie de mettre les chiffres aligné par rapport à l'image */
+		}
+
+
+	.heureParHeure {
+		font-size: 1.5rem; /* Affichage des données heure par heure en 10px */
+	}
+
+	.heureParHeure .imageMeteo {
+		text-align: left; /* Mise en allignement gauche des icons de condition */
+	}
+
+	/*
+		Configuration de la météo heures par heures
+	*/
+		.titreOuvertureHeure h3, .titreOuvertureHeure h4 {
+			font-weight  : normal; /* retrait du gras */
+			margin-bottom: 1.5rem; /* creation d'un marge d'eloignement */
+		}
+
+		.titreOuvertureHeure h4 {
+			font-weight: bolder; /* Mise en gras des titres des heures */
+		}
+
+		.heure {
+			font-size: 1.5rem; /* diminution de la taille du titre des heures par heure */
+		}
+
+		.debutHeure {
+			display   : block; 	/* mise en block de la section pour aligner l'image de condition avec la température */
+			text-align: center; /* Centrage de l'image et de la température */
+		}
+
+		.debutHeure img, .debutHeure p {
+			display: inline-block; /* alignement de l'image de condition avec la température */
+		}
+
+		.debutHeure p {
+			margin-top    : 0;
+			vertical-align: text-bottom; /* Pour l'alignement sur la hauteur avec l'image */
+		}
+
+		h5 {
+			font-size      : 1.5rem; 
+			text-decoration: underline; /* soulignement du titre des sections nuage et vent */
+		}
+
+		.sectionPredictionHeure {
+			display: none;  /* desafichache de la section de l'heure par heure */ 
+		} 
+
+		.generalHeure, .humidexFacteurVent, .nuageHeure ,.ventHeure {
+			margin-top: 1rem; /* Mise d'une marge pour éloignement du bas de la secttion avec l'heure suivante */
+		}
+
+		.ventHeure {
+			margin-bottom: 1rem; /* Mise en place d'une marge pour éloigment de la section du dessous (nouvelle heure) */
+		}
+
+		.humidexFacteurVent li:nth-of-type(2), .humidexFacteurVent li:nth-of-type(4) {
+			font-weight: bold; /* mise en gras des explications */
+		}
+
+		
+		/* Fin de la configuration de la météo h/h */
+
+	/* Fin de la configuration du main */
+
+/*
+	Configuration du Footer
+*/
+	footer a {
+		padding: 0.5rem 0rem; /* eloignement du la balise du haut et du bas */
+		display: block; /* Mise en block de la balise A du lien du site meteo */
+		text-align: center; /* centrage du lien pour le site meteo */
+		font-weight: bold; /* Mise en gras du lien vers le site meteo */
+	}
+
+	/* Fin de la configuration du footer */
+

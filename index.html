@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<title>Module pour afficher la météo d'une ville par la saisie d'un code postal ou la localisation GPS</title>
+	<!-- Chargement des metas -->
+		<!-- activation des caractères internationaux -->
+			<meta charset="utf-8">
+		<!-- Mise en place des metas pour l'aplicaiton mobile -->
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<!-- Mise en place des CSS -->
+		<!-- Font Awesone -->
+			<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+		<!-- Mon style -->
+			<style type="text/css">
+
+				@import url('style/style.css');
+			</style>
+
+
+	</head>
+
+	 
+	<body>
+		<section id="corpDePage" >
+		<header>
+			<h1>Module météo d'une ville</h1>
+
+			<section>
+				<h2>Choix de la ville</h2>
+
+				<!-- Formulaire de saisie du code postale et de la ville -->
+					<form method="post" action="#" >
+						<p>
+							<label for="code_postal" >code postal : </label>
+							<input type="text" name="code_postal" id="code_postal" />
+							<span id="messageAttente" >
+								<!-- insertion du message d'attente -->
+							</span>
+						</p>
+						<p>
+							<select id="selecteVille">
+								<!-- insertion des <option> par jQuery -->
+							</select>
+						</p>
+						<p>
+							<input id="submit" type="submit" name="envoie" />
+						</p>
+					</form>		
+					<!-- Fin du formulaire de saisie de la ville -->
+			</section>
+		</header>
+
+		<main>
+
+			<section id="meteo_ville" >
+				<!-- Insertion de la météo par jQuery -->
+			</section>
+			
+		</main>
+
+		<footer>
+			<p>Remerciement au site qui nous permet d'utiliser sur json pour vous offrir cette prévision :</p>
+			<a alt="lien vers prediction_meteo.ch" href="http://www.prevision-meteo.ch" target="_blank" >www.prevision-meteo.ch</a> 
+			
+		</footer>
+	</section>	
+		<!-- Mise en place des scripts JavaScript et jQuery -->
+			<!-- jQuery -->
+				 <script
+				  src="https://code.jquery.com/jquery-3.2.1.min.js"
+				  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+				  crossorigin="anonymous"></script>
+
+			<!-- Mon script JavaScript et jquery -->
+				<script type="text/javascript" src="script/script.js" ></script>
+	</body>
+</html>
