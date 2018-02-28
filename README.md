@@ -22,7 +22,8 @@ Ce module permet d'inserer la météo sur cinq jours dans une petite fenêttre p
 	<h2>Analyse et affichage des données réçus</h2>
 		
 	<h3>Récupération, analyse et traduction des abréviations de direction</h3>
-	 	Pour l'analyse et la traduction des abréviations de direction en langage normale, J'ai mis en place une fonction pour une utilisation intensive : 
+
+	 		Pour l'analyse et la traduction des abréviations de direction en langage normale, J'ai mis en place une fonction pour une utilisation intensive : 
 
 
  
