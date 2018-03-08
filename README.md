@@ -5,31 +5,54 @@ Ce module permet d'inserer la météo sur cinq jours dans une petite fenêttre p
 
 
 <b><u>Pour ce faire il est décomposé en deux partie :</u></b>
+	
+<ol>
 
-- une partie de recherche par code postale afin de détermier la localisation GPS.
-- une partie de recherche et d'affichage avec décodage du Json de la météo de la localisation GPS trouvée en 1.
+	<li>une partie de recherche par code postal afin de détermier la localisation GPS.</li>
+	<li>une partie qui renvoie les coordonnées GPS trouvés en 1 à un site météorologique afin de recevoir sous forme de Json la météo de la localisation désiré en 1.</li>
+</ol>
 
 
-	<h2>La récupération du code postale</h2>
+<h2>La récupération du code postal</h2>
+	
+<p>La récupération de la ville se fait par un formulaire où nous saisissons le code postal de la ville recherchée.</p>
+
+<p>
+Une fois que les 5 chiffres sont inscrit, il bloque le formulaire et lance la recherche par une méthode Ajax sur un Json de la poste ( citué sur le serveur ) afin d'afficher toutes les localitées correspondantes au code postal saisie.
+</p>
+
+<p>
+Une fois l'affichage des différentes villes dans le formulaire, on choisi celle qui nous intéresse et on valide, afin d'envoyer au site de météo les coordonées de la ville recherchée.
+</p>
+
+<h2>Recupération des données de la météo</h2>
+
+Une fois la localisation GPS trouvé par le formulaire de choix de la ville. Elle est envoyé par une méthode Ajax au site suisse : ....... afin de recevoir une réponse sous forme de ficher Json.  
+Cette réponse Json est analysée et décortiquée afin d'être affichée au bon format avec les bons termes.
+
+<h2>Analyse et affichage des données réçus</h2>
+	
+<h3>Récupération, analyse et traduction des abréviations de direction</h3>
+
+Pour l'analyse et la traduction des abréviations de direction en langage normale, J'ai mis en place une fonction pour une utilisation intensive : 
+
+<h3>Analyse des données reçus par le Json et transcription pour affichage</h3>
+
+Nous avons différentes données qui arrive par le Json :
+
+<ul>
+	<li>La météo du jour.</li>
+	<li>La météo jour par jour sur 5 jours.</li>
+</ul>
 		
-	La récupération du code postale de la ville se fait par un formulaire. Une fois que les 5 chiffres sont inscrit, il bloque le formulaire et lance la recherche par une méthode Json sur un Json de la poste afin d'afficher toutes les localitées correspondantes au code postale.
-	
-	<h2>Recupération des données de la météo</h2>
-	
-	Une fois la localisation GPS trouvé par le formulaire de choix de la ville. Elle est envoyé au site suisse : ....... pour une réponse sous forme de Json.  
-	Cette réponse est analysée afin d' être affichée au bon format avec les bons termes.
-	
-	<h2>Analyse et affichage des données réçus</h2>
+
+
+
+
+
+
+
+
+
 		
-	<h3>Récupération, analyse et traduction des abréviations de direction</h3>
-
-	 		Pour l'analyse et la traduction des abréviations de direction en langage normale, J'ai mis en place une fonction pour une utilisation intensive : 
-
-
- 
-
-
-
-	
-			
 
