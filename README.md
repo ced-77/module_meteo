@@ -8,8 +8,8 @@ Ce module permet d'inserer la météo sur cinq jours dans une petite fenêttre p
 	
 <ol>
 
-	<li>une partie de recherche par code postal afin de détermier la localisation GPS.</li>
-	<li>une partie qui renvoie les coordonnées GPS trouvés en 1 à un site météorologique afin de recevoir sous forme de Json la météo de la localisation désiré en 1.</li>
+<li>une partie de recherche par code postal afin de détermier la localisation GPS.</li>
+<li>une partie qui renvoie les coordonnées GPS trouvés en 1 à un site météorologique afin de recevoir sous forme de Json la météo de la localisation désiré en 1.</li>
 </ol>
 
 
