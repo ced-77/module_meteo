@@ -1,20 +1,5 @@
-<style>
-	h1 {
-		color: red;
-		text-align: center;
-		}
 
-	h2 {
-		color: blue;
-		}
-
-
-	section {
-		margin-left: 20px;
-			}
-</style>
-
-<h1>Module météo d'une ville par code postale</h1>
+<h1 style="color: red;" >Module météo d'une ville par code postale</h1>
 
 
 Ce module permet d'inserer la météo sur cinq jours dans une petite fenêttre pour un site afin d'avoir une option météo.
